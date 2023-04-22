@@ -1,7 +1,5 @@
 # Gost-Config-Script
 
-Certainly, I can provide a brief documentation for the code you provided:
-
 ## Description
 
 This script is designed to create a supervisor config file and a Gost config file for a bash script. Supervisor is a process control system that allows you to monitor and control a number of processes on UNIX-like operating systems. Gost is a simple command-line tunneling service that can be used to forward traffic over a secure SSH connection.
