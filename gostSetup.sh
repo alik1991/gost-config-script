@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Welcome to the Gost config script by acrux"
+echo ""
 
 read -p "Enter the name of the key: " KEY_NAME
 read -p "Enter the path to save the key (default: /root/.ssh): " KEY_PATH
@@ -16,10 +18,11 @@ sudo ssh-keygen -t ed25519 -N "" -f "${KEY_PATH}/${KEY_NAME}"
 echo "SSH key generated at ${KEY_PATH}/${KEY_NAME}!"
 
 echo "Sending The Public Key to the other server"
+echo ""
 
 # Send Public Key to the Other Server
 
-read -p "Enter the port (if the port is the default please enter 22): " DS_PORT
+read -p "Enter the destination port (if the port is the default please enter 22): " DS_PORT
 read -p "Enter the Public key address that you want transfer: " PB_KEY_PATH
 read -p "Enter the username for destination ip address: " USR
 read -p "Enter the destination ip address: " DS_IP
