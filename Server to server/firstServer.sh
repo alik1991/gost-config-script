@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "Welcome to the Gost config script by acrux"
 echo ""
+echo "Step 1 create the key for ssh connection"
+
 
 read -p "Enter the name of the key: " KEY_NAME
 read -p "Enter the path to save the key (default: /root/.ssh): " KEY_PATH
@@ -17,7 +19,7 @@ sudo ssh-keygen -t ed25519 -N "" -f "${KEY_PATH}/${KEY_NAME}"
 
 echo "SSH key generated at ${KEY_PATH}/${KEY_NAME}!"
 
-echo "Sending The Public Key to the other server"
+echo "Step 2 Sending The Public Key to the other server"
 echo ""
 
 # Send Public Key to the Other Server
