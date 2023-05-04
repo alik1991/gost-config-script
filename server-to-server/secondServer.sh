@@ -16,7 +16,7 @@ stdout_logfile=/var/log/${PROG_NAME}.out.log
 EOF
 
 #Write gost config for client side
-read -p "Enter the ServerSide port: " SR_PORT
+read -p "Enter the ServerSide port that you defined in the firstServer: " SR_PORT
 read -p "Enter the Public Key Path: " PB_KEY_PATH
 
 #Create the gost config
