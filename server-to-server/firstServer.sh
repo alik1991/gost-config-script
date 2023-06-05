@@ -26,9 +26,9 @@ echo "Step 2 Sending The Public Key to the other server"
 
 read -p "Enter the destination port (if the port is the default please enter 22): " DS_PORT
 read -p "Enter the Public key path that you want transfer: " PB_KEY_PATH
-read -p "Enter the username for destination ip address: " USR
-read -p "Enter the destination ip address: " DS_IP
-read -p "Enter the destination path that you want to transfer: " DS_PATH
+read -p "Enter the USERNAME for destination ip address: " USR
+read -p "Enter the destination IP address: " DS_IP
+read -p "Enter the destination key path that you want to transfer: " DS_PATH
 
 
 scp -P ${DS_PORT} ${PB_KEY_PATH} ${USR}@${DS_IP}:${DS_PATH}
@@ -37,17 +37,16 @@ echo "Public Key Transfered"
 
 echo "Create The supervisor config for your bash script"
 # Prompt for config name and program name
-read -p "Enter the name of the config file: " CONF_NAME
-read -p "Enter the name of the program: " PROG_NAME
+read -p "Enter the name of the connection: " CONF_NAME
 
 # Write supervisor config file
 cat> /etc/supervisor/conf.d/${CONF_NAME}.conf <<EOF
-[program:${PROG_NAME}]
+[program:${CONF_NAME}]
 command=/root/${CONF_NAME}.sh
 autostart=true
 autorestart=true
-stderr_logfile=/var/log/${PROG_NAME}.err.log
-stdout_logfile=/var/log/${PROG_NAME}.out.log
+stderr_logfile=/var/log/${CONF_NAME}.err.log
+stdout_logfile=/var/log/${CONF_NAME}.out.log
 EOF
 
 #Write gost config for client side

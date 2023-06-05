@@ -2,17 +2,16 @@
 
 echo "Create The supervisor config for your bash script"
 # Prompt for config name and program name
-read -p "Enter the name of the config file: " CONF_NAME
-read -p "Enter the name of the program: " PROG_NAME
+read -p "Enter the name of the connection: " CONF_NAME
 
 # Write supervisor config file
 cat> /etc/supervisor/conf.d/${CONF_NAME}.conf <<EOF
-[program:${PROG_NAME}]
+[program:${CONF_NAME}]
 command=/root/${CONF_NAME}.sh
 autostart=true
 autorestart=true
-stderr_logfile=/var/log/${PROG_NAME}.err.log
-stdout_logfile=/var/log/${PROG_NAME}.out.log
+stderr_logfile=/var/log/${CONF_NAME}.err.log
+stdout_logfile=/var/log/${CONF_NAME}.out.log
 EOF
 
 #Write gost config for client side
