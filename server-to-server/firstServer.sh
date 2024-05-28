@@ -92,3 +92,12 @@ sudo supervisorctl update
 echo ""
 
 echo "Gost Configured, Enjoy"
+
+# Print port number and password
+echo "Port Number: ${CL_PORT}"
+echo "Password: ${PASSWORD}"
+
+# Print machine IP address or domain
+echo "IP Address: $(hostname -I | awk '{print $1}')"
+# Or, if you have a domain assigned to the machine:
+# echo "Machine Domain: $(hostname)"
