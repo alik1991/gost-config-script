@@ -31,5 +31,13 @@ sudo chmod +x /root/${CONF_NAME}.sh
 sudo supervisorctl reread
 sudo supervisorctl update
 
+echo ""
+
+echo "Gost Configured, Enjoy"
+
+# Print port number and password
+echo "Port Number: ${CL_PORT}"
+echo "Password: ${PASSWORD}"
+
 
 echo "Gost Configured, Enjoy"
